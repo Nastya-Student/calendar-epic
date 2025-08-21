@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calendar</title>
+  </head>
+  <body class="text-foreground">
+    <div class="w-full h-full bg-gray-100 py-5 px-30">
+      <div
+        class="w-full max-w-screen-xl min-w-160 bg-white m-auto rounded-md shadow p-6"
+      >
+        <header>
+          <h1 class="font-medium text-4x1">Calendar</h1>
+        </header>
+        <main class="mt-5">
+          <div
+            id="form-overlay"
+            class="hidden fixed w-full h-full left-0 top-0 bg-black/50"
+          ></div>
+          <div
+            id="form"
+            class="fixed justify-self-center bg-gray-300 h-80 w-80 p-6 rounded-md hidden"
+          >
+            <button
+              id="close-form"
+              class="absolute top-4 right-4 opacity-60 hover:opacity-100 transition-opacity duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary rounded-md"
+              aria-label="Close a drawer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-x w-5 h-5"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M18 6l-12 12" />
+                <path d="M6 6l12 12" />
+              </svg>
+            </button>
+            <form id="note-form" class="mt-3 flex flex-col gap-2">
+              <label for="note-text" class="text-sm block">note:</label>
+              <input
+                id="note-text"
+                name="text"
+                type="text"
+                required
+                placeholder="note:"
+                maxlength="25"
+                class="text-sm mt-1 h-10 w-full px-3 py-2 rounded-lg bg-white border border-gray-200 placeholder:font-light outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              />
+              <button
+                id="save-button"
+                class="ml-auto flex items-center gap-1 rounded-md bg-primary text-white h-9 py-2 px-3 hover:bg-primary/90 transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary"
+              >
+                Save
+              </button>
+            </form>
+          </div>
+          <div class="m-auto">
+            <table id="table" class="border w-3xl mx-auto">
+              <caption>
+                <div
+                  id="caption"
+                  class="border flex flex-row justify-between p-2"
+                >
+                  <button id="decrement">&lt;</button>
+                  <div id="caption-text">MONTH YEAR</div>
+
+                  <button id="increment">&gt;</button>
+                </div>
+              </caption>
+              <thead>
+                <th class="border">S</th>
+                <th class="border">M</th>
+                <th class="border">T</th>
+                <th class="border">W</th>
+                <th class="border">T</th>
+                <th class="border">F</th>
+                <th class="border">S</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border"></td>
+                  <td class="border"></td>
+                  <td class="border"></td>
+                  <td class="border"></td>
+                  <td class="border"></td>
+                  <td class="border"></td>
+                  <td class="border"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
