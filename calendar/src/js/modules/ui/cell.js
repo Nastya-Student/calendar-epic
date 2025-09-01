@@ -35,13 +35,6 @@ export const renderCell = (render, id) => {
   }
   </div>
   `;
-  [...sortedNotesList].forEach((element) => {
-    const removeButton = document.getElementById(element.timestamp);
-    removeButton.addEventListener("click", () => {
-      deleteNote(cell, element.timestamp);
-      render();
-    });
-  });
 };
 
 export const renderItem = ({ text, timestamp, id }) => {

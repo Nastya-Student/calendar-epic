@@ -11,6 +11,7 @@ export const renderForm = (cellId) => {
   const close = () => {
     formOverlay.classList.add("hidden");
     form.classList.add("hidden");
+    location.reload();
   };
 
   closeButton.addEventListener("click", close);
@@ -27,7 +28,6 @@ export const renderForm = (cellId) => {
     e.target.reset();
 
     close();
-    location.reload();
 
     // onSubmit?.();
     // window.close();

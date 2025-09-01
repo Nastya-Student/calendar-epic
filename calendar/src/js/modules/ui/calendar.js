@@ -1,6 +1,7 @@
 import { decrement } from "./decrementButton";
 import { increment } from "./incrementButton";
 import { renderForm } from "./form";
+import { deleteNote } from "../utils/notes/deleteNote";
 
 export const renderCalendar = (onSubmit) => {
   const days = document.getElementsByTagName("td");
@@ -16,8 +17,18 @@ export const renderCalendar = (onSubmit) => {
 
   daysArray.forEach((element) => {
     element.addEventListener("click", (event) => {
+      let onButton = false;
       const deleteButtons = [...element.getElementsByTagName("button")];
-      if (!deleteButtons.forEach((button) => button.contains(event.target))) {
+      deleteButtons.forEach((button1) => {
+        if (button1.contains(event.target)) {
+          // console.log("onButton: " + element.id + " " + button1.id);
+          deleteNote(element, button1.id);
+          onSubmit();
+          onButton = true;
+        }
+      });
+
+      if (!onButton) {
         formOpen();
         renderForm(element.id);
       }
