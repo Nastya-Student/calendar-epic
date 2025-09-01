@@ -1,2 +1,9 @@
 # calendar-epic
-js, tailwind css, vite
+
+js, tailwind, vite
+
+not reviewed
+
+run app:
+
+- npm run dev
