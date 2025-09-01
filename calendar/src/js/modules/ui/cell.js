@@ -2,7 +2,7 @@ import { deleteNote } from "../utils/notes/deleteNote";
 import { getNotesFromDate } from "../utils/notes/getNotes";
 import { sortByTimestamp } from "../utils/notes/sortByTimestamp";
 
-export const renderCell = (id) => {
+export const renderCell = (render, id) => {
   const cell = document.getElementById(id);
 
   const notesList = getNotesFromDate(id);
@@ -35,12 +35,23 @@ export const renderCell = (id) => {
   }
   </div>
   `;
+  [...sortedNotesList].forEach((element) => {
+    const removeButton = document.getElementById(element.timestamp);
+    removeButton.addEventListener("click", () => {
+      deleteNote(cell, element.timestamp);
+      render();
+    });
+  });
 };
 
 export const renderItem = ({ text, timestamp, id }) => {
   const element = document.createElement("li");
-  element.innerHTML = `${text} <button id="${timestamp}">x</button>`;
-  const removeButton = document.getElementById(timestamp);
-  // removeButton.addEventListener("click", () => deleteNote(timestamp));
+  element.innerHTML = `
+  <div class="flex place-content-between">
+  <div>
+  ${text} 
+  </div>
+  <button id="${timestamp}" class="delete-button">x</button>
+  </div>`;
   return element.outerHTML;
 };

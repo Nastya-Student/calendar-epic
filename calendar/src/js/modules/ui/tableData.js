@@ -3,7 +3,7 @@ import { renderCell } from "./cell";
 import { getActiveMonth } from "../utils/date/getDate";
 import { getActiveYear } from "../utils/date/getDate";
 
-export const renderTableData = () => {
+export const renderTableData = (render) => {
   const year = getActiveYear();
   const month = getActiveMonth();
 
@@ -18,7 +18,7 @@ export const renderTableData = () => {
   }
 
   daysArray.forEach((element) => {
-    renderCell(element.id);
+    renderCell(render, element.id);
   });
 
   daysArray.forEach((element) => {

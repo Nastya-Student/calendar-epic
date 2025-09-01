@@ -4,7 +4,7 @@ import { renderTableData } from "./modules/ui/tableData";
 
 const render = () => {
   renderCaption();
-  renderTableData();
+  renderTableData(render);
 };
 
 document.addEventListener("DOMContentLoaded", () => {

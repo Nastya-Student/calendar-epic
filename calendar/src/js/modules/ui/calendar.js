@@ -15,10 +15,12 @@ export const renderCalendar = (onSubmit) => {
   };
 
   daysArray.forEach((element) => {
-    element.addEventListener("click", () => {
-      // setId(element.id);
-      formOpen();
-      renderForm(element.id);
+    element.addEventListener("click", (event) => {
+      const deleteButtons = [...element.getElementsByTagName("button")];
+      if (!deleteButtons.forEach((button) => button.contains(event.target))) {
+        formOpen();
+        renderForm(element.id);
+      }
     });
   });
 
