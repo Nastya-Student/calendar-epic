@@ -7,8 +7,8 @@ export const getDaysList = () => {
 
   const days = [];
 
-  let firstWeekDay = new Date(year, month, 1).getDay();
-  let lastDay = new Date(year, month + 1, 0).getDate();
+  let firstWeekDay = new Date(year, month, 0).getDay();
+  let lastDay = new Date(year, +month + 1, 0).getDate();
   let lastDayPrevious = new Date(year, month, 0).getDate();
 
   for (let i = firstWeekDay - 1; i >= 0; i--) {
@@ -29,7 +29,7 @@ export const getDaysList = () => {
     if (month == 11) {
       nextYear++;
     }
-    days[i] = date + "-" + (month + 1) + "-" + nextYear;
+    days[i] = date + "-" + (+month + 1) + "-" + nextYear;
   }
 
   return days;
