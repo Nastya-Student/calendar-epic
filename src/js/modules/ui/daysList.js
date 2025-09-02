@@ -7,7 +7,7 @@ export const getDaysList = () => {
 
   const days = [];
 
-  let firstWeekDay = new Date(year, month, 0).getDay();
+  let firstWeekDay = new Date(year, month, 1).getDay();
   let lastDay = new Date(year, +month + 1, 0).getDate();
   let lastDayPrevious = new Date(year, month, 0).getDate();
 

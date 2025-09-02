@@ -1,6 +1,7 @@
 {
-  "name": "calendar",
-  "private": true,
+  "name": "calendar-epic",
+  "homepage": "https://nastya-student.github.io/calendar-epic/",
+  "private": true,  
   "version": "0.0.0",
   "type": "module",
   "scripts": {

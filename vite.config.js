@@ -6,4 +6,5 @@ export default defineConfig({
   build: {
     outdir: "../dist",
   },
+  base: "/calendar-epic",
 });
