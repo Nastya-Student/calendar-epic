@@ -15,7 +15,9 @@ export const renderCell = (render, id) => {
     "border-black",
     "w-50",
     "h-30",
-    "align-top"
+    "align-top",
+    "hover:bg-gray-200",
+    "cursor-pointer"
   );
 
   cell.innerHTML = `<div class="align-top"> ${id.split("-")[0]}</div>
